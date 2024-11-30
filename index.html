@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetisports 1</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+    <h1>Yeti Sports 1</h1>
+    <div id="flash-container" style="width: 1024px; height: 768px;"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.RufflePlayer) {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+                document.getElementById("flash-container").appendChild(player);
+
+                // Передаём только корректный объект
+                player.load({
+                    url: "Yetisports Part 3 - Seal Bounce.swf"
+                });
+            } else {
+                console.error("RufflePlayer не найден.");
+            }
+        });
+    </script>
+</body>
+</html>
